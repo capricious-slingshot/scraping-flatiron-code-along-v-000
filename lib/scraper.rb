@@ -24,17 +24,17 @@ class Scraper
 
   def get_courses
     doc = get_page
-    doc.css(".post").each do |post|
+    doc.css(".post")
+  end
+
+  def make_courses
+    get_courses.each do |post|
       title = post.css("h2").text
       schedule = doc.css(".date").text
       description = doc.css("p").text
 
       Course.new(title, schedule, description)
     end
-  end
-
-  def make_courses
-
   end
 
 end
