@@ -24,7 +24,7 @@ class Scraper
 
   def get_courses
     doc = get_page
-    binding.pry
+    # binding.pry
     titles = doc.css(".post h2")
     schedules = doc.css(".post .date")
     description = doc.css(".post p")
